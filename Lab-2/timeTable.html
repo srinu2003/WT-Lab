@@ -1,9 +1,26 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Time Table</title>
-    <link rel="stylesheet" type="text/css" href="timeTable.css">
+    <!-- <link rel="stylesheet" type="text/css" href="timeTable.css"> -->
+    <style>
+        td {
+            /* padding: 15px; */
+            border: 0.5px dashed #4d23e4;
+        }
+
+        table {
+            /* border-spacing: px; */
+            border-collapse: collapse;
+            width: 100%;
+            border: 1px solid #000000;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
+
 <body>
     <h1>TIME TABLE</h1>
     <table>
@@ -23,7 +40,9 @@
             <td align="center" height="50">WT</td>
             <td align="center" height="50">SE</td>
             <td align="center" height="50">IPR</td>
-            <td rowspan="6" align="center" height="50"><h2>L<br>U<br>N<br>C<br>H</h2></td>
+            <td rowspan="6" align="center" height="50">
+                <h2>L<br>U<br>N<br>C<br>H</h2>
+            </td>
             <td colspan="3" align="center" height="50">IRS</td>
             <td align="center" height="50">IPR</td>
         </tr>
@@ -69,4 +88,5 @@
         </tr>
     </table>
 </body>
+
 </html>
