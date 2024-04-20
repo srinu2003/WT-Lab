@@ -1,0 +1,58 @@
+<html>
+<body bgcolor="lightgrey">
+    <br><br><br>
+    <script language="javascript">
+        function validate() {
+            var flag = 1;
+            var id = document.myform.id.value.trim();
+            var title = document.myform.title.value.trim();
+            var no = document.myform.no.value.trim();
+            var cost = document.myform.cost.value.trim();
+            var date = document.myform.date.value.trim();
+
+            // Check if any field is empty
+            if (id === "" || title === "" || no === "" || cost === "" || date === "") {
+                flag = 0;
+            }
+
+            // Check if number of books is numeric
+            if (!/^\d+$/.test(no)) {
+                flag = 0;
+            }
+
+            // Check if cost is numeric
+            if (!/^\d+$/.test(cost)) {
+                flag = 0;
+            }
+
+            // Check if title and cost combination is valid
+            if (!((title === "c" && parseInt(cost) === 444) || (title === "jsp" && parseInt(cost) === 555))) {
+                flag = 0;
+            }
+
+            if (flag === 1) {
+                alert("VALID INPUT");
+            } else {
+                alert("INVALID INPUT");
+                // Set focus to the first input field
+                document.myform.id.focus();
+            }
+        }
+    </script>
+    <form name="myform">
+        <div align="center"><pre>
+            LOGIN ID :<input type="text" name="id"><br>
+            TITLE :<input type="text" name="title"><br>
+            NO.OF BOOKS:<input type="text" name="no"><br>
+            COST OF BOOK:<input type="text" name="cost"><br>
+            DATE :<input type="text" name="date"><br>
+        </pre><br><br>
+        </div>
+        <br><br>
+        <div align="center">
+            <input type="button" value="ok" onClick="validate()">&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="reset" value="clear">
+        </div>
+    </form>
+</body>
+</html>

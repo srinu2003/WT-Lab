@@ -1,0 +1,51 @@
+<html>
+<body bgcolor="lightgrey">
+    <br><br>
+    <script language="javascript">
+        function validate() {
+            var flag = 1;
+            if (
+                document.myform.name.value == "" ||
+                document.myform.addr.value == "" ||
+                document.myform.phno.value == "" ||
+                document.myform.id.value == "" ||
+                document.myform.pwd.value == ""
+            ) {
+                flag = 0;
+            }
+            var str = document.myform.phno.value;
+            var x;
+            for (var i = 0; i < str.length; i++) {
+                x = str.substr(i, 1);
+                if (isNaN(parseInt(x))) {
+                    flag = 0;
+                    break;
+                }
+            }
+            if (flag == 1) {
+                alert("VALID INPUT");
+            } else {
+                alert("INVALID INPUT");
+                document.myform.name.focus(); // Set focus to the first input field
+            }
+        }
+    </script>
+    <table align="center" border="1">
+        <form name="myform">
+            <div align="center"><pre>
+NAME :<input type="text" name="name"><br><br>
+ADDRESS :<input type="text" name="addr"><br><br> <!-- Fixed typo here -->
+CONTACT NUMBER:<input type="text" name="phno"><br><br>
+LOGINID :<input type="text" name="id">
+<br>
+PASSWORD :<input type="password" name="pwd"></pre><br><br> <!-- Fixed typo here -->
+            </div>
+            <br><br>
+            <div align="center">
+                <input type="submit" value="ok" onClick="validate()">&nbsp;&nbsp;&nbsp;
+                <input type="reset" value="clear">
+            </div>
+        </form>
+    </table>
+</body>
+</html>

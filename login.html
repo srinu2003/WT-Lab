@@ -1,0 +1,45 @@
+<html>
+<head>
+    <title>User Login</title>
+</head>
+<body bgcolor="lightgrey">
+    <br><br><br>
+    <script language="javascript">
+        function validate() {
+            var flag = 1;
+            if (document.myform.username.value == "" || document.myform.password.value == "") {
+                flag = 0;
+            }
+            if (flag == 1) {
+                alert("VALID INPUT");
+            } else {
+                alert("INVALID INPUT");
+                document.myform.username.focus(); // Set focus to username field
+            }
+            return flag; // Return false if validation fails
+        }
+    </script>
+    <form name="myform" onsubmit="return validate();"> <!-- Added onsubmit event -->
+        <div align="center">
+            <pre>
+                <table align="center" border="1">
+                    <tr>
+                        <td><h4>Enter User name</td>
+                        <td><input type="text" name="username"></td> <!-- Added name attribute -->
+                    </tr>
+                    <tr>
+                        <td><h4>Enter Password</td>
+                        <td><input type="password" name="password"></td> <!-- Added name attribute -->
+                    </tr>
+                    <tr colspan="2" align="center">
+                        <td>
+                            <input type="submit" value="SUBMIT">
+                            &nbsp;&nbsp;
+                            <input type="reset" value="reset">
+                        </td>
+                    </tr>
+                </table>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<html>
+<body bgcolor="lightgrey">
+    <br><br><br>
+    <script language="javascript">
+        function validate() {
+            var flag = 1;
+            if (document.myform.title.value == "") {
+                flag = 0;
+            }
+            var str = document.myform.title.value;
+            if (str == "c") {
+                document.getElementById("result").innerHTML = "title-->c cost-->444";
+            } else if (str == "jsp") {
+                document.getElementById("result").innerHTML = "title-->jsp cost-->555";
+            } else {
+                flag = 0;
+            }
+            if (flag == 1) {
+                alert("VALID INPUT");
+            } else {
+                alert("INVALID INPUT");
+                document.myform.title.focus(); // Set focus to the input field
+            }
+        }
+    </script>
+    <form name="myform">
+        <div align="center">
+            <pre>
+                BOOK TITLE :<input type="text" name="title"><br>
+            </pre><br><br>
+        </div>
+        <br><br>
+        <div align="center">
+            <input type="button" value="ok" onClick="validate()">&nbsp;&nbsp;&nbsp;&nbsp; <!-- Changed type to button to prevent form submission -->
+            <input type="reset" value="clear">
+        </div>
+    </form>
+    <div id="result" align="center"></div> <!-- Added a div to display result -->
+</body>
+</html>
